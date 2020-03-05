@@ -1,10 +1,14 @@
 
 <div style='text-align: center; box-shadow: 10px 10px 5px grey; margin: 10px; border: 3px solid mediumslateblue; padding: 10px'>
 <%= @game.player_1.name %> vs. <%= @game.player_2.name %> <br />
-<%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP <br />
-<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP <br />
+<br />
 <%= @game.current_turn.name%>'s turn <br />
-<form action="/attack">
+<br />
+<%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP <br />
+<br />
+<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP <br />
+
+<form action="/attack" method='post'>
   <input type="submit" value="Attack">
 </form>
 </div>
