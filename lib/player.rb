@@ -12,6 +12,6 @@ class Player
   end
 
   def receive_damage
-    @hit_points -= [2,4,6,6,6,8,10,10,10,15,30].sample
+    @hit_points -= [2,4,4,4,6,6,6,8,10,10,15,30].sample
   end
 end
