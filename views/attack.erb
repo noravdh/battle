@@ -1,6 +1,7 @@
 <div style='text-align: center; box-shadow: 10px 10px 5px grey; margin: 10px; border: 3px solid mediumslateblue; padding: 10px'>
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %> <br />
+<%= @game.current_turn.name %> attacked <%= @game.opponent_of(@game.current_turn).name %> <br />
 
-<%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP   <br />
-<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP 
+<form action="/switch-turns" method="post">
+  <input type="submit" value="OK">
+</form>
 </div>
