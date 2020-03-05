@@ -24,7 +24,7 @@ describe Player do
 
   describe '#receive_damage' do
     it 'reduces the player hit points' do
-      expect { pikachu.receive_damage }.to change {pikachu.hit_points}.by(-10)
+      expect { pikachu.receive_damage }.to change {pikachu.hit_points}
     end
   end
 end
