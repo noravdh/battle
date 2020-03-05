@@ -1,7 +1,11 @@
-<div style='text-align: center; box-shadow: 10px 10px 5px grey; margin: 10px; border: 3px solid mediumslateblue; padding: 10px'>
-<%= @game.current_turn.name %> attacked <%= @game.opponent_of(@game.current_turn).name %> <br />
+<div style='background-color: midnightblue; color: #FFB500; font-family: Arial, Helvetica, sans-serif; height: 80%; text-align: center; margin: 10px; border: 6px solid #FFB500; padding: 10px'>
 
+<h1><%= @game.current_turn.name %> attacked <%= @game.opponent_of(@game.current_turn).name %></h1> 
+<br />
+<br />
+<br />
+<br />
 <form action="/switch-turns" method="post">
-  <input type="submit" value="OK">
+  <input type="submit" value="OK" style='color: midnightblue; height: 40px; font-size: 18px; background-color: #FFB500; width: 200px; border: 1px solid  #FFB500; margin: 50px 0 0 0'>
 </form>
 </div>

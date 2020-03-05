@@ -7,7 +7,7 @@ feature 'Switch turns' do
 
     scenario 'after pplayer 1 attacks' do
       sign_in_and_play
-      click_button 'Attack'
+      click_button 'ATTACK!'
       click_button 'OK'
       expect(page).not_to have_content "Pikachu's turn"
       expect(page).to have_content "Snorlax's turn"
