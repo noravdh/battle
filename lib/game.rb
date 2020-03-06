@@ -19,7 +19,7 @@ class Game
   end
 
   def attack(player)
-    player.receive_damage
+    opponent_of(player).receive_damage(player.character)
   end
 
   def opponent_of(the_player)

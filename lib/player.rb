@@ -1,17 +1,21 @@
 class Player
   DEFAULT_HIT_POINTS = 60
-  attr_reader :name, :hit_points
+  attr_reader :name, :hit_points, :character
 
   def initialize(name, hit_points = DEFAULT_HIT_POINTS)
     @name = name
     @hit_points = hit_points
+    @moves = {
+      "volvo"=> {"hit"=> [30], "kick"=> [7,3,7,6,4,1,11] },
+      "saab"=> {"hit"=> [5], "kick"=> [7,3,7,6,4,1,11] }
+    }
   end
 
-  def attack(player)
-    player.receive_damage
+  def choose_character(character)
+    @character= character
   end
 
-  def receive_damage
-    @hit_points -= [2,4,4,4,6,6,6,8,10,10,15,30].sample
+  def receive_damage(attacking_character, move = "kick")
+    @hit_points -= @moves[attacking_character][move].sample
   end
 end
