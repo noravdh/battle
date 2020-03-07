@@ -13,7 +13,10 @@
 <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP <br />
 <br />
 </div>
-<form action="/attack" method='post'>
-  <input type="submit" value="ATTACK!" style='color: midnightblue; height: 40px; font-size: 18px; background-color: #FFB500; width: 200px; border: 1px solid  #FFB500'>
+
+<h2>Choose an option:</h2>
+<form action="/attack" method="post">
+  <input type="submit" name="name" value="<%=@game.current_turn.moves[@game.current_turn.character].keys[0]%>" style='color: midnightblue; height: 40px; font-size: 18px; background-color: #FFB500; width: 200px; border: 1px solid  #FFB500'>
+  <input type="submit" name="name" value="<%=@game.current_turn.moves[@game.current_turn.character].keys[1]%>" style='color: midnightblue; height: 40px; font-size: 18px; background-color: #FFB500; width: 200px; border: 1px solid  #FFB500'>
 </form>
 </div>

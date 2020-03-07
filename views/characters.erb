@@ -1,16 +1,16 @@
 <div style='background-color: midnightblue; color: #FFB500; font-family: Arial, Helvetica, sans-serif; height: 80%; text-align: center; margin: 10px; border: 6px solid #FFB500; padding: 10px'>
-
+<h1>Choose a character!</h1>
 <form action="/selected" method="post">
-<label for="player_1">Player 1</label>
+<label for="player_1"><%= @game.player_1.name %>:</label>
 <select id="player_1" name="character_1">
-  <option value="volvo" >Volvo</option>
-  <option value="saab" >Saab</option>
+  <option value="crash bandicoot" >Crash Bandicoot</option>
+  <option value="spyro" >Spyro</option>
 </select>
-<label for="player_2">Player 2</label>
+<label for="player_2"><%= @game.player_2.name %>:</label>
 <select id="player_2" name="character_2">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-</select>
+  <option value="crash bandicoot">Crash Bandicoot</option>
+  <option value="spyro">Spyro</option>
+</select><br /><br />
   <input type="submit" value="Begin" style='color: midnightblue; height: 40px; font-size: 18px; background-color: #FFB500; width: 200px; border: 1px solid  #FFB500'>
 </form>
 

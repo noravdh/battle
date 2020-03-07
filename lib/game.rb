@@ -6,6 +6,14 @@ class Game
     @current_turn = player_1
   end
 
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+  
+  def self.instance
+    @game
+  end
+
   def player_1
     @players.first
   end
@@ -18,8 +26,8 @@ class Game
     @current_turn = opponent_of(current_turn)
   end
 
-  def attack(player)
-    opponent_of(player).receive_damage(player.character)
+  def attack(player, move)
+    opponent_of(player).receive_damage(player.character, move)
   end
 
   def opponent_of(the_player)
@@ -37,4 +45,5 @@ class Game
   def losing_players
     @players.select{ |player| player.hit_points <= 0 }
   end
+  
 end
