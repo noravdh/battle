@@ -1,17 +1,52 @@
-<div style='background-color: midnightblue; color: #FFB500; font-family: Arial, Helvetica, sans-serif; height: 80%; text-align: center; margin: 10px; border: 6px solid #FFB500; padding: 10px'>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<div style='background-color: midnightblue; color: #FFB500; font-family: Arial, Helvetica, sans-serif; height: 100%; text-align: center; border: 6px solid #FFB500; padding: 10px'>
 <h1>Choose a character!</h1>
-<form action="/selected" method="post">
-<label for="player_1"><%= @game.player_1.name %>:</label>
-<select id="player_1" name="character_1">
-  <option value="crash bandicoot" >Crash Bandicoot</option>
-  <option value="spyro" >Spyro</option>
-</select>
-<label for="player_2"><%= @game.player_2.name %>:</label>
-<select id="player_2" name="character_2">
-  <option value="crash bandicoot">Crash Bandicoot</option>
-  <option value="spyro">Spyro</option>
-</select><br /><br />
-  <input type="submit" value="Begin" style='color: midnightblue; height: 40px; font-size: 18px; background-color: #FFB500; width: 200px; border: 1px solid  #FFB500'>
+
+<form action="/selected" method="post" id="form1">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h2><%= @game.player_1.name %>:</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <input type="checkbox" id="myCheckbox1" name="character_1" value="crash bandicoot"/>
+            <label for="myCheckbox1">
+            <img src="CrashifiedSmashified.png" /></label>
+          </div>
+          <div class="col-sm">
+            <input type="checkbox" id="myCheckbox2" name="character_1" value="spyro"/>
+            <label for="myCheckbox2">
+            <img src="220px-Spyro.png" /></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h2><%= @game.player_2.name %>:</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <input type="checkbox" id="myCheckbox3" name="character_2" value="crash bandicoot"/>
+            <label for="myCheckbox3">
+            <img src="CrashifiedSmashified.png" /></label>
+          </div>
+          <div class="col-sm">
+            <input type="checkbox" id="myCheckbox4" name="character_2" value="spyro"/>
+            <label for="myCheckbox4">
+            <img src="220px-Spyro.png" /></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </form>
+
+<button type="submit" form="form1" value="Submit" style='margin: 50px 0 0 0; color: midnightblue; height: 40px; font-size: 18px; background-color: #FFB500; width: 200px; border: 1px solid  #FFB500'>Submit Choices</button>
 
 </div>
